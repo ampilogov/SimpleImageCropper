@@ -1,0 +1,6 @@
+framework module SimpleImageCropper {
+  umbrella header "SimpleImageCropper-umbrella.h"
+
+  export *
+  module * { export * }
+}

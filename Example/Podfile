@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SimpleImageCropper_Example' do
+  pod 'SimpleImageCropper', :path => '../'
+
+  target 'SimpleImageCropper_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

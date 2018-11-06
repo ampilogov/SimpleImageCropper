@@ -1,0 +1,6 @@
+framework module Pods_SimpleImageCropper_Tests {
+  umbrella header "Pods-SimpleImageCropper_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

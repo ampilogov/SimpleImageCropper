@@ -1,0 +1,16 @@
+PODS:
+  - SimpleImageCropper (0.1.0)
+
+DEPENDENCIES:
+  - SimpleImageCropper (from `../`)
+
+EXTERNAL SOURCES:
+  SimpleImageCropper:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SimpleImageCropper: 8e4b98e5d2888210418115160c98f3b6e54ed1d8
+
+PODFILE CHECKSUM: 95aa80ec47ddca987b2b81ddbba1426db30ac411
+
+COCOAPODS: 1.5.3
