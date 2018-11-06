@@ -32,10 +32,10 @@
     UIImage *image = [UIImage imageNamed:@"wall.jpg"];
     
     DZNPhotoEditorViewController *cropViewController = [[DZNPhotoEditorViewController alloc] initWithImage:image];
-    cropViewController.cropMode = DZNPhotoEditorViewControllerCropModeCustom;
-    cropViewController.cropSize = CGSizeMake(self.view.frame.size.width, 100);
+    cropViewController.cropMode = DZNPhotoEditorViewControllerCropModeRectangle1x3;
     
     UINavigationController *controller = [[UINavigationController alloc] initWithRootViewController:cropViewController];
+    controller.modalPresentationStyle = UIModalPresentationFormSheet;
     [self presentViewController:controller animated:YES completion:nil];
 }
 

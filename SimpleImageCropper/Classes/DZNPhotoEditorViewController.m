@@ -346,7 +346,7 @@ typedef NS_ENUM(NSInteger, DZNPhotoAspect) {
 
 - (CGSize)cropSize
 {
-    CGSize viewSize = (![self isIPad]) ? self.view.bounds.size : self.navigationController.preferredContentSize;
+    CGSize viewSize = self.view.bounds.size;
     
     if (self.cropMode == DZNPhotoEditorViewControllerCropModeCustom) {
         CGFloat cropHeight = roundf((_cropSize.height * viewSize.width) / _cropSize.width);
@@ -354,6 +354,9 @@ typedef NS_ENUM(NSInteger, DZNPhotoAspect) {
             cropHeight = viewSize.height;
         }
         return CGSizeMake(_cropSize.width, cropHeight);
+    }
+    else if (self.cropMode == DZNPhotoEditorViewControllerCropModeRectangle1x3) {
+        return CGSizeMake(viewSize.width, viewSize.width / 3);
     }
     else {
         return CGSizeMake(viewSize.width, viewSize.width);
@@ -414,6 +417,7 @@ DZNPhotoAspect photoAspectFromSize(CGSize aspectRatio)
         case DZNPhotoEditorViewControllerCropModeSquare:
         case DZNPhotoEditorViewControllerCropModeCustom:        return [self squareOverlayMask];
         case DZNPhotoEditorViewControllerCropModeCircular:      return [self circularOverlayMask];
+        case DZNPhotoEditorViewControllerCropModeRectangle1x3:  return [self squareOverlayMask];
     }
 }
 
