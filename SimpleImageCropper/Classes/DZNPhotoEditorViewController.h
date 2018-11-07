@@ -42,6 +42,12 @@ typedef void (^DZNPhotoEditorCancelBlock)(DZNPhotoEditorViewController *editor);
 
 /** Copyright text. */
 @property (nonatomic, strong, nullable) NSMutableAttributedString *copyrightText;
+    
+/** Cancel button title. */
+@property (nonatomic, strong, nullable) NSString *cancelTitle;
+    
+/** Choose button title. */
+@property (nonatomic, strong, nullable) NSString *chooseTitle;
 
 /**
  Initializes a photo editor with the specified image, and default cropping mode (Square).

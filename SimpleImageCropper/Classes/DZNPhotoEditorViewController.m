@@ -91,11 +91,10 @@ typedef NS_ENUM(NSInteger, DZNPhotoAspect) {
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = [UIColor blackColor];
+    self.cancelTitle = @"Cancel";
+    self.chooseTitle = @"Choose";
     
-    if ([self isIPad]) {
-        self.title = NSLocalizedString(@"Edit Photo", nil);
-    }
-    else {
+    if (![self isIPad]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
 }
@@ -241,7 +240,7 @@ typedef NS_ENUM(NSInteger, DZNPhotoAspect) {
 - (UIButton *)leftButton
 {
     if (!_leftButton) {
-        _leftButton = [self buttonWithTitle:NSLocalizedString(@"Cancel", nil)];
+        _leftButton = [self buttonWithTitle:self.cancelTitle];
         [_leftButton addTarget:self action:@selector(cancelEdition:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _leftButton;
@@ -250,7 +249,7 @@ typedef NS_ENUM(NSInteger, DZNPhotoAspect) {
 - (UIButton *)rightButton
 {
     if (!_rightButton) {
-        _rightButton = [self buttonWithTitle:NSLocalizedString(@"Choose", nil)];
+        _rightButton = [self buttonWithTitle:self.chooseTitle];
         [_rightButton addTarget:self action:@selector(acceptEdition:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _rightButton;
