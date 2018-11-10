@@ -183,11 +183,6 @@ typedef NS_ENUM(NSInteger, DZNPhotoAspect) {
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
-    
-    if (![self isIPad]) {
-        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
-    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
