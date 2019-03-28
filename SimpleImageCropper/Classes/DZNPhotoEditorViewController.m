@@ -171,10 +171,7 @@ typedef NS_ENUM(NSInteger, DZNPhotoAspect) {
 {
     [super viewDidAppear:animated];
      
-    if (![self isIPad]) {
-        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
-    }
-    else if (self.navigationController.isNavigationBarHidden) {
+    if ([self isIPad] && self.navigationController.isNavigationBarHidden) {
         [self.navigationController setNavigationBarHidden:NO animated:YES];
         self.navigationItem.hidesBackButton = YES;
     }
@@ -370,7 +367,7 @@ typedef NS_ENUM(NSInteger, DZNPhotoAspect) {
 
 - (CGFloat)barsHeight
 {
-    CGFloat height = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+    CGFloat height = [[UIWindow new] safeAreaInsets].top;
     height += CGRectGetHeight(self.navigationController.navigationBar.frame);
     return height;
 }
