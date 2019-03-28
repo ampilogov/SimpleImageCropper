@@ -11,6 +11,8 @@
 #import <UIKit/UIKit.h>
 #import "DZNPhotoPickerControllerConstants.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class DZNPhotoEditorViewController;
 
 typedef void (^DZNPhotoEditorAcceptBlock)(DZNPhotoEditorViewController *editor, NSDictionary *userInfo);
@@ -58,3 +60,5 @@ typedef void (^DZNPhotoEditorCancelBlock)(DZNPhotoEditorViewController *editor);
 - (instancetype)initWithImage:(UIImage *)image;
 
 @end
+
+NS_ASSUME_NONNULL_END
